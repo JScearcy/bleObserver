@@ -1,6 +1,6 @@
 If you want to create a new app that uses the source of the template from the `master` branch, you can execute the following:
 
-* `tns create my-app-name --template https://github.com/JScearcy/bleObserver.git#master`
+* `tns create my-app-name --template https://github.com/JScearcy/bleObserver.git#template`
 * Add a `keys.ts` file to the app/resources folder and put the following: 
 ```
 export class Keys {

@@ -4,7 +4,10 @@
 	"description": "A simple ble observer that can upload to Adafruit IO",
 	"license": "SEE LICENSE IN ./LICENSE",
 	"readme": "README.md",
-	"repository": "<fill-your-repository-here>",
+	"repository": {
+    "type": "git",
+    "url": "git@github.com:JScearcy/bleObserver.git"
+  },
 	"nativescript": {
 		"id": "org.nativescript.bleObserver",
 		"tns-android": {
