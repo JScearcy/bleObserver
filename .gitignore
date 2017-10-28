@@ -1,5 +1,5 @@
 #KeyFile
-app/resources/keys.ts
+resources/keys.ts
 keys
 
 # NativeScript specific
@@ -12,10 +12,8 @@ app/core.light.*.scss
 app/_bootstrap-map.scss
 
 # compiled output
-app/*.css
-app/**/*.css
-app/**/*.js
-app/**/*.js.map
+**/*.js
+**/*.js.map
 tmp/
 
 # dependencies

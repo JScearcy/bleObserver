@@ -1,16 +1,17 @@
 {
-	"name": "ble-observer",
-	"version": "1.0.0",
+  "android": {
+    "v8Flags": "--expose_gc"
+  },
+  "main": "app.js",
+  "name": "ble-observer",
+  "version": "1.0.0",
 	"description": "A simple ble observer that can upload to Adafruit IO",
-	"license": "SEE LICENSE IN ./LICENSE",
-	"readme": "README.md",
-	"repository": "<fill-your-repository-here>",
-	"nativescript": {
-		"id": "org.nativescript.bleObserver",
-		"tns-android": {
-			"version": "3.2.0"
-		}
-	},
+	"license": "Apache-2.0",
+  "readme": "README.md",
+	"repository": {
+    "type": "git",
+    "url": "git@github.com/JScearcy/bleObserver.git"
+  },
 	"dependencies": {
 		"nativescript-bluetooth": "^1.2.0",
 		"nativescript-mqtt": "git+https://github.com/krislankford/nativescript-mqtt.git",
