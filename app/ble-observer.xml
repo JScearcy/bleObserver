@@ -1,0 +1,48 @@
+<!--
+The markup in NativeScript apps contains a series of user interface components, each
+of which NativeScript renders with a platform-specific iOS or Android native control.
+You can find a full list of user interface components you can use in your app at
+https://docs.nativescript.org/ui/components.
+-->
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="navigatingTo" class="page">
+    <!--
+    The ActionBar is the NativeScript common abstraction over the Android ActionBar and iOS NavigationBar.
+    http://docs.nativescript.org/ui/action-bar
+    -->
+    <Page.actionBar>
+        <ActionBar title="bleObserver" icon="" class="action-bar">
+        </ActionBar>
+    </Page.actionBar>
+    <!--
+    The main layout used is a GridLayout.
+    You can learn more about NativeScript layouts at
+    https://docs.nativescript.org/ui/layout-containers.
+
+    These components make use of several CSS class names that are part of the NativeScript
+    core theme, such as p-20, btn, btn-primary, and text-center. You can view a full list of the
+    class names available for styling your app at https://docs.nativescript.org/ui/theme.
+    -->
+    <GridLayout columns="*" rows="110, 6*, *" class="p-20">
+        <GridLayout col="0" columns="*, *, *, *, *, *" rows="*, *">
+            <Button text="Upload" tap="{{ upload }}" class="btn btn-primary" col="0" colSpan='3' />
+            <Button text="{{ scanButtonText.value }}" tap="{{ scan }}" class="btn btn-primary" col="3" colSpan="3" />
+            <Button text="{{ publishData.connectionString }}" tap="{{ connect }}" isEnabled="{{ publishData.connectionString === 'Connect' }}" class="btn btn-primary" col="1" colSpan="4" row="1" />
+        </GridLayout>
+        <ListView col="0" row="1" items="{{ bleObserverService.bleItems }}" itemTap="{{ bleItemTap }}">
+            <ListView.itemTemplate>
+                <StackLayout class="ble__list-item" id="{{ name }}">
+                    <Label text="{{ 'Mac: ' + name }}" textWrap="true" class="text-primary" />
+                    <Label text="{{ 'Volt: ' + voltDisplay }}" textWrap="true" class="text-primary" />
+                    <Label text="{{ 'CNT: ' + countParsed }}" textWrap="true" class="text-primary" />
+                    <Label text="{{ keyValue }}" textWrap="true" class="text-primary" />
+                    <Label text="{{ 'Timestamp: ' + timeParsed }}" textWrap="true" class="text-primary" />
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+        <GridLayout col="0" row="2" columns="*, 4*, 4*, *" rows="*, *">
+            <Label text="{{ publishData.selectedString }}" col="1" colSpan="2" class="text-muted text-center" />
+            <Label text="{{ publishData.feedString }}" textWrap="true" class="title" col="1" row="1" class="text-muted text-center" />
+            <Label text="{{ publishData.dataString }}" textWrap="true" class="title" col="2" row="1" class="text-muted text-center" />
+        </GridLayout>
+    </GridLayout>
+</Page>

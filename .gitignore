@@ -1,0 +1,33 @@
+#KeyFile
+app/resources/keys.ts
+keys
+
+# NativeScript specific
+hooks/
+lib/
+platforms/
+app/theme-core-scss/
+app/core.dark.*.scss
+app/core.light.*.scss
+app/_bootstrap-map.scss
+
+# compiled output
+app/*.css
+app/**/*.css
+app/**/*.js
+app/**/*.js.map
+tmp/
+
+# dependencies
+node_modules/
+
+# IDEs and editors
+/.idea
+
+# misc
+npm-debug.log
+typings/
+
+# System Files
+.DS_Store
+Thumbs.db

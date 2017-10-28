@@ -1,0 +1,8 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" shownModally="onShownModally" loaded="onLoaded" unloaded="onUnloaded" class="page">
+  <StackLayout class="ble__modal" columns="*, 4*, 4*, *" rows="*, *, *">
+    <Label class="text-primary h1" text="Adafruit IO Login" />
+    <TextField hint="Adafruit IO Userame" id="username" automationText="username" />
+    <TextField hint="Adafruit IO Key" id="aioKey" automationText="aioKey" secure="true" />
+    <Button text="Set Credentials" tap="onLoginButtonTap" class="btn btn-primary" />
+  </StackLayout>
+</Page>
