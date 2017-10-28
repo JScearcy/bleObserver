@@ -12,8 +12,6 @@ app/core.light.*.scss
 app/_bootstrap-map.scss
 
 # compiled output
-app/*.css
-app/**/*.css
 app/**/*.js
 app/**/*.js.map
 tmp/

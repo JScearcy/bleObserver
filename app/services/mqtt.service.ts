@@ -91,7 +91,7 @@ export class MQTTService {
         const newPayload = {
             value: payload
         };
-        const destination = `${this.username}/feeds/${MQTTConfig.Feed}`;
+        const destination = this.createTopic(this.username);
         const message = new Message({
             payloadString: JSON.stringify(newPayload),
             destinationName: destination,
@@ -103,7 +103,7 @@ export class MQTTService {
             this.sendMessage(message);
         } else {
             const callback = () => {
-                message.topic = `${this.username}/feeds/${MQTTConfig.Feed}`
+                message.topic = this.createTopic(this.username);
                 this.sendMessage(message);
             };
             this.addEvent(new OnConnectionSuccess(), () => {
@@ -120,6 +120,14 @@ export class MQTTService {
             this.mqttClient.publish(message);
         } catch (err) {
             console.log('error publishing: ', err);
+        }
+    }
+
+    createTopic(username: string) {
+        if (MQTTConfig.ShouldPrependUsername) {
+            return `${username}/${MQTTConfig.Feed}`;
+        } else {
+            return MQTTConfig.Feed;
         }
     }
 }
